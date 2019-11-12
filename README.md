@@ -167,7 +167,7 @@ Utils has multiple token types. Types are space, radius and shadow. See how to n
 
 ## Contact/Feedback
 
-Mail [andreas.koutsoukos@gmai.com](mailto:andreas.koutsoukos@gmail.com)
+Mail [andreas.koutsoukos@gmail.com](mailto:andreas.koutsoukos@gmail.com)
 
 ## License
 
