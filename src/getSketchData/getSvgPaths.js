@@ -20,14 +20,14 @@ if (tokenPage) {
     .flat()
     .filter(item => item.name.includes(iconLayerName));
 
-  getSvgPaths = iconLayers.map(({ name, id, layers }) => {
+  getSvgPaths = iconLayers.map(({ name, layers }) => {
     let parsedSvgCode = sketch.export(layers[0], options).toString();
     parsedSvgCode = parsedSvgCode
       .replace("<!-- Generator: Sketch 58 (84663) - https://sketch.com -->", "")
       .replace("<desc>Created with Sketch.</desc>", "")
       .replace(/"/g, "'")
       .replace(/\n/g, "")
-      .replace(/\<\?xml.+\?\>/g, "")
+      .replace(/<\?xml.+\?>/g, "")
       .replace(/svg/, "svg id='" + name.replace(/\//, "-") + "'");
     return {
       name: name.replace(/\//g, "-"),

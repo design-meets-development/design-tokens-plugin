@@ -11,6 +11,12 @@ module.exports = {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "globals": {
+        "console": false,
+        "context": false,
+        "COSAlertWindow": false,
+        "NSFileHandlingPanelOKButton": false
+    },
     "rules": {
     }
 };

@@ -35,7 +35,7 @@ export const saveContentToFile = async (path, file) => {
   };
 
   async function creatingTokens() {
-    const msg = await createFolderFiles();
+    await createFolderFiles();
   }
 
   switch (file) {
