@@ -1,0 +1,23 @@
+{
+  "name": "Desing tokens",
+  "description": "Sketch plugin exports desing tokens to JSON format.",
+  "author": "Andreas Koutsoukos",
+  "version": "1.0",
+  "compatibleVersion": "56",
+  "bundleVersion": 1,
+  "icon": "icon_128x128.png",
+  "commands": [
+    {
+      "name": "Design tokens export",
+      "identifier": "design-tokens-export",
+      "shortcut": "ctrl shift r",
+      "script": "./plugin.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "design-tokens-export"
+    ]
+  }
+}

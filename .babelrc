@@ -1,0 +1,4 @@
+{
+    "presets": ["@skpm/babel-preset"],
+    "plugins": ["@babel/plugin-transform-runtime"]
+  }
