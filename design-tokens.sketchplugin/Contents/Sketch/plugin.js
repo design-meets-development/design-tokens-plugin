@@ -20569,7 +20569,7 @@ var sketchDom = __webpack_require__(/*! sketch/dom */ "sketch/dom").getDocuments
 var sketchDomSelected = __webpack_require__(/*! sketch/dom */ "sketch/dom").getSelectedDocument(); // Here are the name conventions for getting elements and layers from Sketch
 
 
-var mainSketchFile = 'desing-tokens';
+var mainSketchFile = 'design-tokens';
 var tokensPage = 'design-tokens'; // If the tokens is in layergroup
 
 var colorGroupName = 'colors';

@@ -2,7 +2,7 @@ const sketchDom = require("sketch/dom").getDocuments();
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
 
 // Here are the name conventions for getting elements and layers from Sketch
-export const mainSketchFile         = 'desing-tokens';
+export const mainSketchFile         = 'design-tokens';
 export const tokensPage             = 'design-tokens';
 
 // If the tokens is in layergroup

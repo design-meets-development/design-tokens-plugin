@@ -2,21 +2,21 @@
 
 # Design Tokens
 
-Delivering consistent Desing System. A Sketch plugin that exports Desing Tokens to JSON format. You can export colors, typography, icons and utilis.
+Delivering consistent Design System. A Sketch plugin that exports Design Tokens to JSON format. You can export colors, typography, icons and utilis.
 A must-have tool for design system project.
 
 
 ## Features 
 
-1. Desingn tokens in single source of truth file as Sketch library
+1. Design tokens in single source of truth file as Sketch library
 2. Color tokens as JSON object
 3. Typography tokens as JSON object
 4. Icon tokens as JSON object
 5. Utils tokens as JSON object
 
-### 1. Desingn tokens in single source of truth file as Sketch library
+### 1. Design tokens in single source of truth file as Sketch library
 
-Use example `desing-tokens.sketch` file in `example-file` folder. You can fill in the content you want
+Use example `design-tokens.sketch` file in `example-file` folder. You can fill in the content you want
 in the example file. Make sure that you use layer style and text styles when you create tokens. 
 All tokens must be at the subfolder in Sketch named by color, typography, icons and utils.
 
@@ -152,8 +152,8 @@ Utils has multiple token types. Types are space, radius and shadow. See how to n
 
 ## How to install 
 
-- Download the [desing-tokens.sketchplugin.zip](https://github.com/vjandrei/Design-Tokens/releases/latest). Extract zip and double-click the `design-tokens.sketchplugin` file
-- Download the [example-file.zip](https://github.com/vjandrei/Design-Tokens/releases/latest). Extract zip and double-click the `desing-tokens.sketch0` file
+- Download the [design-tokens.sketchplugin.zip](https://github.com/vjandrei/Design-Tokens/releases/latest). Extract zip and double-click the `design-tokens.sketchplugin` file
+- Download the [example-file.zip](https://github.com/vjandrei/Design-Tokens/releases/latest). Extract zip and double-click the `design-tokens.sketch` file
 
 ## Roadmap
 

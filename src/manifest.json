@@ -1,6 +1,6 @@
 {
-  "name": "Desing tokens",
-  "description": "Sketch plugin exports desing tokens to JSON format.",
+  "name": "Design tokens",
+  "description": "Sketch plugin exports design tokens to JSON format.",
   "author": "Andreas Koutsoukos",
   "version": "1.0",
   "compatibleVersion": "56",
