@@ -1,88 +1,100 @@
-import { mainSketchFile, tokensPage} from "../settings";
-import getColorFills from '../getSketchData/getColorFills';
-import getTypography from '../getSketchData/getTypographyFonts';
-import getSvgPaths from '../getSketchData/getSvgPaths';
-import getUtils from '../getSketchData/getUtils';
+import { mainSketchFile, tokensPage } from "../settings";
+import getColorFills from "../getSketchData/getColorFills";
+import getTypography from "../getSketchData/getTypographyFonts";
+import getSvgPaths from "../getSketchData/getSvgPaths";
+import getUtils from "../getSketchData/getUtils";
 
 const sketchDom = require("sketch/dom").getDocuments();
 const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
 const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
 
-const fromPairs = (pairs, dest={}) => {
-    pairs.forEach(([key, value]) => {
-        dest[key] = value;
-    });
-    return dest;
+const fromPairs = (pairs, dest = {}) => {
+  pairs.forEach(([key, value]) => {
+    dest[key] = value;
+  });
+  return dest;
 };
 
 const jsonData = {};
 
 export const color = () => {
-    if (tokenPage) {
-        const arrayToObject = (array) =>
-            array.reduce((obj, item) => ({
-                ...obj, [item.name]: {
-                    "value": item.color.slice(0, -2),
-                    "type": "color"
-                }
-            }), {})
-        // Gives the name of the category
-        jsonData.color = arrayToObject(getColorFills);
-    }
+  if (tokenPage) {
+    const arrayToObject = array =>
+      array.reduce(
+        (obj, item) => ({
+          ...obj,
+          [item.name]: {
+            value: item.color.slice(0, -2),
+            type: "color"
+          }
+        }),
+        {}
+      );
+    // Gives the name of the category
+    jsonData.color = arrayToObject(getColorFills);
+  }
 
-    const rawData = fromPairs(Object.entries(jsonData.color));
-    const colorData = JSON.stringify({ color: rawData }, null, 4);
-    return colorData;
-}
-
+  const rawData = fromPairs(Object.entries(jsonData.color));
+  const colorData = JSON.stringify({ color: rawData }, null, 4);
+  return colorData;
+};
 
 export const typography = () => {
-    if (tokenPage) {
-        const arrayToObject = (array) =>
-            array.reduce((obj, item) => ({
-                ...obj, [item.name]: {
-                    "font-family": { "value": item.fontFamily },
-                    "font-size": { "value": item.fontSize },
-                    "weight": { "value": item.weight },
-                    "letter-spacing": { "value": item.letterSpacing },
-                    "line-height": { "value": item.lineHeight },
-                    "type": item.tokenType 
-                }
-            }), {})
-        // Gives the name of the category
-        jsonData.typography = arrayToObject(getTypography);
-        const rawData = fromPairs(Object.entries(jsonData.typography));
-        const typographyData = JSON.stringify({ typography: rawData }, null, 4);
-        return typographyData;
-    }
-}
+  if (tokenPage) {
+    const arrayToObject = array =>
+      array.reduce(
+        (obj, item) => ({
+          ...obj,
+          [item.name]: {
+            "font-family": { value: item.fontFamily },
+            "font-size": { value: item.fontSize },
+            weight: { value: item.weight },
+            "letter-spacing": { value: item.letterSpacing },
+            "line-height": { value: item.lineHeight },
+            type: item.tokenType
+          }
+        }),
+        {}
+      );
+    // Gives the name of the category
+    jsonData.typography = arrayToObject(getTypography);
+    const rawData = fromPairs(Object.entries(jsonData.typography));
+    const typographyData = JSON.stringify({ typography: rawData }, null, 4);
+    return typographyData;
+  }
+};
 
 export const icons = () => {
-    if (tokenPage) {
-        const arrayToObject = (array) =>
-            array.reduce((obj, item) => ({
-                ...obj, [item.name]: {
-                    "value": item.svgCodeSting,
-                    "type": "icon"
-                }
-
-            }), {})
-        // Gives the name of the category
-        jsonData.svg = arrayToObject(getSvgPaths);
-        const rawData = fromPairs(Object.entries(jsonData.svg));
-        const iconsData = JSON.stringify({ icon: rawData }, null, 4);
-        return iconsData;
-    }
-}
+  if (tokenPage) {
+    const arrayToObject = array =>
+      array.reduce(
+        (obj, item) => ({
+          ...obj,
+          [item.name]: {
+            value: item.svgCodeSting,
+            type: "icon"
+          }
+        }),
+        {}
+      );
+    // Gives the name of the category
+    jsonData.svg = arrayToObject(getSvgPaths);
+    const rawData = fromPairs(Object.entries(jsonData.svg));
+    const iconsData = JSON.stringify({ icon: rawData }, null, 4);
+    return iconsData;
+  }
+};
 
 export const utils = () => {
-        const arrayToObject = (array) =>
-            array.reduce((obj, item) => ({
-                ...obj, [item.name]: {
-                    "spacer": (item.height ? item.height : undefined),
-                    "radius": (item.radius ? item.radius : undefined),
-                    "shadows": (item.shadowItem ? [item.shadowItem] : undefined),
-                    /*
+  const arrayToObject = array =>
+    array.reduce(
+      (obj, item) => ({
+        ...obj,
+        [item.name]: {
+          spacer: item.height ? item.height : undefined,
+          radius: item.radius ? item.radius : undefined,
+          shadows: item.shadowItem ? [item.shadowItem] : undefined,
+          /*
                     "shadow": (item.shadow ? {
                         color: (item.shadowColor ? item.shadowColor : undefined),
                         x: (item.shadowX ? item.shadowX : undefined),
@@ -92,16 +104,15 @@ export const utils = () => {
                     }: undefined),
                     */
 
-                    "type": "utils"
-                }
-            }), {})
-        // Gives the name of the category
-        
-        jsonData.utils = arrayToObject(getUtils);
-        const rawData = fromPairs(Object.entries(jsonData.utils));
-        const utilsData = JSON.stringify({ utils: rawData }, null, 4);
-        return utilsData;
-}
+          type: "utils"
+        }
+      }),
+      {}
+    );
+  // Gives the name of the category
 
-
-
+  jsonData.utils = arrayToObject(getUtils);
+  const rawData = fromPairs(Object.entries(jsonData.utils));
+  const utilsData = JSON.stringify({ utils: rawData }, null, 4);
+  return utilsData;
+};

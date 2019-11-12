@@ -20,6 +20,7 @@
     ]
   },
   "scripts": {
+    "prettify": "prettier --write 'src/**'",
     "build": "skpm-build",
     "watch": "skpm-build --watch",
     "start": "skpm-build --watch --run",
@@ -32,11 +33,16 @@
     "@skpm/babel-preset": "^0.2.1",
     "@skpm/builder": "^0.5.11",
     "mkdirp-promise": "^5.0.1",
+    "prettier": "^1.19.1",
     "svgo": "^1.3.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
     "@skpm/fs": "^0.2.2",
     "@skpm/path": "^0.1.4"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "arrowParens": "avoid"
   }
 }

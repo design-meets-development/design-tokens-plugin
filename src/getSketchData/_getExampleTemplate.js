@@ -4,4 +4,4 @@ const sketchDom = require("sketch/dom").getDocuments();
 /** Access the selected Document */
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
 /** If loadadh needed */
-import { } from "lodash";
+import {} from "lodash";
