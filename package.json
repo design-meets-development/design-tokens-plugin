@@ -14,7 +14,7 @@
   "skpm": {
     "name": "Design Tokens",
     "manifest": "src/manifest.json",
-    "main": "desing-tokens.sketchplugin",
+    "main": "design-tokens.sketchplugin",
     "assets": [
       "assets/**/*"
     ]
