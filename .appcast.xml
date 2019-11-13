@@ -2,7 +2,10 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <item>
-      <enclosure url="https://github.com/vjandrei/Design-Tokens" sparkle:version="0.0.1"/>
+      <enclosure url="https://github.com/vjandrei/design-tokens/releases/download/0.0.1/design-tokens.sketchplugin.zip" sparkle:version="0.0.1"/>
+    </item>
+    <item>
+      <enclosure url="https://github.com/vjandrei/design-tokens/releases/download/0.0.2/design-tokens.sketchplugin.zip" sparkle:version="0.0.2"/>
     </item>
   </channel>
 </rss>
