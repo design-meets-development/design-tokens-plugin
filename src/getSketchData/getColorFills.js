@@ -1,11 +1,7 @@
 import { map } from "lodash";
-import { mainSketchFile, tokensPage, colorGroupName, colorLayerName } from "../settings";
-const sketchDom = require("sketch/dom").getDocuments();
+import { tokensPage, colorGroupName, colorLayerName } from "../settings";
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
-const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
-
-
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
 let getColorFills;
 
@@ -15,6 +11,7 @@ if (tokenPage) {
     const groupLayers = map(colorGroups, "layers")
         .flat()
         .filter(item => item.name.includes(colorLayerName));
+    
     getColorFills = groupLayers.map(({ name, sharedStyleId }) => {
         return{
             name: name.split("/")[1],
@@ -24,5 +21,4 @@ if (tokenPage) {
         }
     });
 }
-
 export default getColorFills;

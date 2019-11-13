@@ -1,12 +1,11 @@
-import { mainSketchFile, tokensPage} from "../settings";
+import {tokensPage} from "../settings";
 import getColorFills from '../getSketchData/getColorFills';
 import getTypography from '../getSketchData/getTypographyFonts';
 import getSvgPaths from '../getSketchData/getSvgPaths';
 import getUtils from '../getSketchData/getUtils';
 
-const sketchDom = require("sketch/dom").getDocuments();
-const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const sketchDomSelected = require("sketch/dom").getSelectedDocument();
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
 const fromPairs = (pairs, dest={}) => {
     pairs.forEach(([key, value]) => {
