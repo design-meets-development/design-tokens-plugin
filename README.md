@@ -1,7 +1,3 @@
-# 🛑There is bug in the plugin
-Make sure that you have only the tokens file open in the Sketch app.
-This will be fixed soon.
-
 ![alt text](assets/readme-cover.jpg)
 
 # Design Tokens
