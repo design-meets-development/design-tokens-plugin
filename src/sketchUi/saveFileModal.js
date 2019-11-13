@@ -4,6 +4,7 @@ import UI from 'sketch/ui';
 const save = async (directoryPath, file) => {
   const writeFile = await saveContentToFile(directoryPath, file)
                     .catch((err) => console.log('Error saving to file', err));
+
   if (writeFile === 'success') {
     UI.alert(
       'Export complete. 👍🏻',

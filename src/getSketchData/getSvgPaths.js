@@ -1,9 +1,9 @@
-import { map} from "lodash";
-import { mainSketchFile, tokensPage, iconsGroupName, iconLayerName} from "../settings";
+import { map } from "lodash";
+import { tokensPage, iconsGroupName, iconLayerName } from "../settings";
 const sketch = require('sketch/dom');
-const sketchDom = require("sketch/dom").getDocuments();
-const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const sketchDomSelected = require("sketch/dom").getSelectedDocument();
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
+
 const options = { 
     formats: 'svg',
     output: false,
@@ -11,6 +11,7 @@ const options = {
  }
 
 let getSvgPaths
+
 
 if (tokenPage) {
     const [{ layers }] = tokenPage.layers;
@@ -20,7 +21,8 @@ if (tokenPage) {
         .flat()
         .filter(item => item.name.includes(iconLayerName));
 
-    getSvgPaths = iconLayers.map(({name, id, layers}) => {
+        
+    getSvgPaths = iconLayers.map(({name, layers}) => {
         let parsedSvgCode = sketch.export(layers[0], options).toString();
         parsedSvgCode = parsedSvgCode
             .replace("<!-- Generator: Sketch 58 (84663) - https://sketch.com -->", '')
@@ -36,5 +38,6 @@ if (tokenPage) {
         }
     });
 }
+
 
 export default getSvgPaths;

@@ -1,9 +1,7 @@
-import { map } from 'lodash';
-import { mainSketchFile, tokensPage, typographyGroupName, typographyLayerName } from '../settings'
-const sketchDom = require('sketch/dom').getDocuments();
+import { map } from "lodash";
+import { tokensPage, typographyGroupName, typographyLayerName } from "../settings";
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
-const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
 let getTypographyValues;
 
@@ -30,4 +28,5 @@ if (tokenPage) {
   });
 
 }
+
 export default getTypographyValues;

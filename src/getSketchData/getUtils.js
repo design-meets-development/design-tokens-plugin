@@ -1,9 +1,8 @@
-import { mainSketchFile, tokensPage, utilisGroupName, utilisLayerName, utilisAll } from "../settings";
-import { map, concat, zipObject, forEach } from 'lodash';
-const sketchDom = require("sketch/dom").getDocuments();
+import { map, concat } from "lodash";
+import { tokensPage, utilisGroupName, utilisLayerName, utilisAll } from "../settings";
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
-const [mainDocument] = sketchDom.filter(file => file.path.includes(mainSketchFile));
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
+
 
 let getUtilsSpace;
 let getUtilsBorder;
@@ -42,6 +41,6 @@ if (tokenPage) {
     });
 }
 
-const getUtilis = concat(getUtilsSpace, getUtilsBorder, getUtilsShadow)
+const getUtilis = concat(getUtilsSpace, getUtilsBorder, getUtilsShadow);
 
 export default getUtilis;
