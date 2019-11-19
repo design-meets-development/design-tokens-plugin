@@ -8,3 +8,10 @@ npm-debug.log
 
 # mac
 .DS_Store
+/design-tokens.sketchplugin/Contents/Sketch/plugin.js.map
+/design-tokens.sketchplugin/Contents/Sketch/plugin.js
+/design-tokens.sketchplugin/Contents/Resources/token-utils-sketch.jpg
+/design-tokens.sketchplugin/Contents/Resources/token-typography-sketch.jpg
+/design-tokens.sketchplugin/Contents/Resources/token-icons-sketch.jpg
+/design-tokens.sketchplugin/Contents/Resources/token-color-sketch.jpg
+/design-tokens.sketchplugin/Contents/Resources/readme-cover.jpg
