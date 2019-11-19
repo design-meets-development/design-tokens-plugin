@@ -1,9 +1,9 @@
 import { exportFormats } from "../settings";
 
-export const sketchExportModal = () => {  
+export const sketchExportModal = () => {
   const exportModal = COSAlertWindow.new();
-  exportModal.setMessageText('Design systems: select exports.');
-  exportModal.setInformativeText('Each file goes to its own named folder.\r\nYou need just choose main folder where all tokens goes.');
+  exportModal.setMessageText("Design systems: select exports.");
+  exportModal.setInformativeText("Each file goes to its own named folder.\r\nYou need just choose main folder where all tokens goes.");
   exportModal.addButtonWithTitle("Ok");
   exportModal.addButtonWithTitle("Cancel");
   exportModal.setIcon(NSImage.alloc().initByReferencingFile(context.plugin.urlForResourceNamed("icon_128x128.png").path()));

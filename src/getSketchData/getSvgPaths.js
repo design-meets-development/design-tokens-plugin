@@ -3,7 +3,7 @@ import { map } from "lodash";
 import { tokensPage, iconsGroupName, iconLayerName } from "../settings";
 const sketch = require("sketch/dom");
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
-const [tokenPage] = mainDocument.pages.filter(page => page.name.includes(tokensPage));
+const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
 const options = {
   formats: "svg",
@@ -12,7 +12,6 @@ const options = {
 };
 
 let getSvgPaths;
-
 
 if (tokenPage) {
   const [{ layers }] = tokenPage.layers;

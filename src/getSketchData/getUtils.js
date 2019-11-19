@@ -4,7 +4,6 @@ import { tokensPage, utilisGroupName, utilisLayerName, utilisAll } from "../sett
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
 const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
-
 let getUtilsSpace;
 let getUtilsBorder;
 let getUtilsShadow;
@@ -13,12 +12,12 @@ if (tokenPage) {
   const [{ layers }] = tokenPage.layers;
   const utilisGroups = layers.filter(layer => layer.name.includes(utilisGroupName));
 
-  const groupLayers = _.map(utilisGroups, "layers")
+  const groupLayers = map(utilisGroups, "layers")
     .flat()
     .filter(item => item.name.includes(utilisLayerName));
 
   const spacerToken = groupLayers.filter(item => item.name.includes(utilisAll[0]));
-  getUtilsSpace = _.map(spacerToken, value => {
+  getUtilsSpace = map(spacerToken, value => {
     return {
       name: value.name.split("/")[1] + "-" + value.name.split("/")[2],
       height: value.frame.height
@@ -26,10 +25,10 @@ if (tokenPage) {
   });
 
   const radiusToken = groupLayers.filter(item => item.name.includes(utilisAll[1]));
-  getUtilsBorder = _.map(radiusToken, value => {
+  getUtilsBorder = map(radiusToken, value => {
     return {
       name: value.name.split("/")[1] + "-" + value.name.split("/")[2],
-      radius: _.map(value.points, value => {
+      radius: map(value.points, value => {
         return value.cornerRadius;
       })
     };
@@ -45,6 +44,5 @@ if (tokenPage) {
 }
 
 const getUtilis = concat(getUtilsSpace, getUtilsBorder, getUtilsShadow);
-
 
 export default getUtilis;

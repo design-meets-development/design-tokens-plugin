@@ -30,5 +30,3 @@ if (tokenPage) {
 }
 
 export default getTypographyValues;
-
-
