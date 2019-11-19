@@ -1,5 +1,6 @@
 import { map } from "lodash";
 import { tokensPage, typographyGroupName, typographyLayerName } from "../settings";
+
 const sketchDomSelected = require("sketch/dom").getSelectedDocument();
 const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
@@ -10,11 +11,11 @@ if (tokenPage) {
   const typographyGroups = layers.filter(layer => layer.name.includes(typographyGroupName));
 
   const groupLayers = map(typographyGroups, "layers")
-        .flat()
-        .filter(item => item.name.includes(typographyLayerName));
-  
+    .flat()
+    .filter(item => item.name.includes(typographyLayerName));
+
   getTypographyValues = groupLayers.map(({ name, sharedStyleId }) => {
-    return{
+    return {
       name: name.split("/")[1],
       lineHeight: sketchDomSelected.getSharedTextStyleWithID(sharedStyleId).style.lineHeight,
       fontSize: sketchDomSelected.getSharedTextStyleWithID(sharedStyleId).style.fontSize,
@@ -24,9 +25,8 @@ if (tokenPage) {
       alignment: sketchDomSelected.getSharedTextStyleWithID(sharedStyleId).style.alignment,
       letterSpacing: sketchDomSelected.getSharedTextStyleWithID(sharedStyleId).style.kerning,
       tokenType: "typography"
-    }
+    };
   });
-
 }
 
 export default getTypographyValues;

@@ -16,8 +16,6 @@
   ],
   "menu": {
     "isRoot": true,
-    "items": [
-      "design-tokens-export"
-    ]
+    "items": ["design-tokens-export"]
   }
 }

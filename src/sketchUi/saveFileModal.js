@@ -1,26 +1,19 @@
-import { saveContentToFile } from '../saveContentToFile';
-import UI from 'sketch/ui';
+import { saveContentToFile } from "../saveContentToFile";
+import UI from "sketch/ui";
 
 const save = async (directoryPath, file) => {
-  const writeFile = await saveContentToFile(directoryPath, file)
-                    .catch((err) => console.log('Error saving to file', err));
+  const writeFile = await saveContentToFile(directoryPath, file).catch(err => console.log("Error saving to file", err));
 
-  if (writeFile === 'success') {
-    UI.alert(
-      'Export complete. 👍🏻',
-      'Tokens were successfully exported.'
-    );
+  if (writeFile === "success") {
+    UI.alert("Export complete. 👍🏻", "Tokens were successfully exported.");
   } else {
-    UI.alert(
-      'Export failed! 🛑',
-      'Something went wrong.'
-    );
+    UI.alert("Export failed! 🛑", "Something went wrong.");
   }
 };
 
-export const saveFileModal = (fileFormat) => {
+export const saveFileModal = fileFormat => {
   const savePanel = NSSavePanel.savePanel();
-  savePanel.setNameFieldStringValue('index')
+  savePanel.setNameFieldStringValue("index");
   savePanel.setPrompt("Save Tokens");
   const resultSaveDialog = savePanel.runModal();
 
