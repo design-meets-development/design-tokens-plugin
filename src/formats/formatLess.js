@@ -1,17 +1,23 @@
-import getTypography from '../getSketchData/getTypographyFonts';
-import getColorFills from '../getSketchData/getColorFills';
+import getTypography from "../getSketchData/getTypographyFonts";
+import getColorFills from "../getSketchData/getColorFills";
 
 export const formatLess = () => {
   const stylesheet = [];
 
   if (getColorFills) {
-    stylesheet.push(getColorFills.map(item => `
+    stylesheet.push(
+      getColorFills.map(
+        item => `
 @${item.name}: ${item.color};
-  `));
+  `
+      )
+    );
   }
 
   if (getTypography) {
-    stylesheet.push(getTypography.map(heading => `
+    stylesheet.push(
+      getTypography.map(
+        heading => `
 .${heading.name} {
   line-height: ${heading.style.lineHeight};
   font-size: ${heading.style.fontSize};
@@ -19,11 +25,15 @@ export const formatLess = () => {
   color: ${heading.style.textColor};
   font-family: ${heading.style.fontFamily};
 }
-  `));
-}
+  `
+      )
+    );
+  }
 
   if (getTypography) {
-    stylesheet.push(getParagraphFonts.map(paragraph => `
+    stylesheet.push(
+      getParagraphFonts.map(
+        paragraph => `
 .${paragraph.name} {
   line-height: ${paragraph.style.lineHeight};
   font-size: ${paragraph.style.fontSize};
@@ -31,8 +41,10 @@ export const formatLess = () => {
   color: ${paragraph.style.textColor};
   font-family: ${paragraph.style.fontFamily};
 }
-  `));
+  `
+      )
+    );
   }
 
-  return stylesheet.flat().join('');
+  return stylesheet.flat().join("");
 };
