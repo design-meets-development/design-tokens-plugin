@@ -12,10 +12,16 @@
       "identifier": "design-tokens-export",
       "shortcut": "ctrl shift r",
       "script": "./plugin.js"
+    },
+    {
+      "name": "Design tokens import",
+      "identifier": "design-tokens-import",
+      "shortcut": "ctrl shift r",
+      "script": "./import.js"
     }
   ],
   "menu": {
     "isRoot": true,
-    "items": ["design-tokens-export"]
+    "items": ["design-tokens-export", "design-tokens-import"]
   }
 }
