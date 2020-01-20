@@ -157,7 +157,7 @@ Utils has multiple token types. Types are space, radius and shadow. See how to n
 
 ## Roadmap
 
-- To-Do
+- [GitHub project](https://github.com/vjandrei/design-tokens/projects/1)
 
 ## Shout out ❤️ 
 - Koodiklinikka #javascript channel for support to answering my stupid questions [https://koodiklinikka.fi/](https://koodiklinikka.fi/)
