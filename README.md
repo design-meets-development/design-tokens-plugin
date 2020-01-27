@@ -145,6 +145,12 @@ Utils has multiple token types. Types are space, radius and shadow. See how to n
                 ]
             ],
             "type": "utils"
+        },
+        "border-all": {
+            "border": [
+                1
+            ],
+            "type": "utils"
         }
     }
 }
