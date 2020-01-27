@@ -93,6 +93,7 @@ export const utils = () => {
           spacer: item.height ? item.height : undefined,
           radius: item.radius ? item.radius : undefined,
           shadows: item.shadowItem ? [item.shadowItem] : undefined,
+          border: item.border ? [item.border] : undefined,
           /*
                     "shadow": (item.shadow ? {
                         color: (item.shadowColor ? item.shadowColor : undefined),

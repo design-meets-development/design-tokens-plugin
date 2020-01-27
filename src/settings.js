@@ -18,7 +18,8 @@ export const utilisLayerName = "utils/";
 export const utilisSpacer = "space";
 export const utilisRadius = "radius";
 export const utilisShadow = "shadow";
-export const utilisAll = [utilisSpacer, utilisRadius, utilisShadow];
+export const utilisBorder = "border";
+export const utilisAll = [utilisSpacer, utilisRadius, utilisShadow, utilisBorder];
 
 export const exportFormats = [".json"];
 export const componentsPage = "atoms-components";

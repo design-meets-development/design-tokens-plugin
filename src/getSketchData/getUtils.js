@@ -5,8 +5,9 @@ const sketchDomSelected = require("sketch/dom").getSelectedDocument();
 const [tokenPage] = sketchDomSelected.pages.filter(page => page.name.includes(tokensPage));
 
 let getUtilsSpace;
-let getUtilsBorder;
+let getUtilsRadius;
 let getUtilsShadow;
+let getUtilsBorder;
 
 if (tokenPage) {
   const [{ layers }] = tokenPage.layers;
@@ -25,7 +26,7 @@ if (tokenPage) {
   });
 
   const radiusToken = groupLayers.filter(item => item.name.includes(utilisAll[1]));
-  getUtilsBorder = map(radiusToken, value => {
+  getUtilsRadius = map(radiusToken, value => {
     return {
       name: value.name.split("/")[1] + "-" + value.name.split("/")[2],
       radius: map(value.points, value => {
@@ -41,8 +42,16 @@ if (tokenPage) {
       shadowItem: sketchDomSelected.getSharedLayerStyleWithID(sharedStyleId).style.shadows
     };
   });
+
+  const borderToken = groupLayers.filter(item => item.name.includes(utilisAll[3]));
+  getUtilsBorder = borderToken.map(({ name, sharedStyleId }) => {
+    return{
+      name: name.split("/")[1] + "-" + name.split("/")[2],
+      border: sketchDomSelected.getSharedLayerStyleWithID(sharedStyleId).style.borders[0].thickness
+    };
+  });
 }
 
-const getUtilis = concat(getUtilsSpace, getUtilsBorder, getUtilsShadow);
+const getUtilis = concat(getUtilsSpace, getUtilsRadius, getUtilsShadow, getUtilsBorder);
 
 export default getUtilis;
