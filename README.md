@@ -158,8 +158,8 @@ Utils has multiple token types. Types are space, radius and shadow. See how to n
 
 ## How to install 
 
-- Download the [design-tokens.sketchplugin.zip](https://github.com/vjandrei/Design-Tokens/releases/latest). Extract zip and double-click the `design-tokens.sketchplugin` file
-- Download the [example-file.zip](https://github.com/vjandrei/Design-Tokens/releases/download/0.0.1/example-file.zip). Extract zip and double-click the `design-tokens.sketch` file
+- Download the [design-tokens.sketchplugin.zip](https://github.com/vjandrei/Design-Tokens/releases/latest/download/To_install_download_this_file.zip). Extract zip and double-click the `design-tokens.sketchplugin` file
+- Download the [example-file.zip](https://github.com/vjandrei/Design-Tokens/releases/latest/download/example-file.zip). Extract zip and double-click the `design-tokens.sketch` file
 
 ## Roadmap
 
