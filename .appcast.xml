@@ -7,5 +7,8 @@
     <item>
       <enclosure url="https://github.com/vjandrei/design-tokens/releases/download/0.0.2/design-tokens.sketchplugin.zip" sparkle:version="0.0.2"/>
     </item>
+    <item>
+      <enclosure url="https://github.com/vjandrei/design-tokens/releases/download/1.1.2/design-tokens.sketchplugin.zip" sparkle:version="1.1.2"/>
+    </item>
   </channel>
 </rss>
