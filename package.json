@@ -2,7 +2,7 @@
   "name": "design-tokens",
   "description": "Design Tokens in JSON format from Sketch library file",
   "author": "Andreas Koutsoukos - <andreas.koutsoukos@gmail.com>",
-  "version": "0.0.1",
+  "version": "1.1.2",
   "license": "MIT",
   "repository": {
     "type": "git",
