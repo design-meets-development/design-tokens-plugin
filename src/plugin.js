@@ -5,8 +5,8 @@ import { saveFileModal } from "./sketchUi/saveFileModal";
 
 const designSystemExport = () => {
   // Check here if even one file is found and something can be exported
-  sketchDom.getSelectedDocument().pages[0].name;
-  if (sketchDom.getSelectedDocument().pages[0].name === "design-tokens") {
+  const desingTokensPage = sketchDom.getSelectedDocument().pages.filter(page => page.name === "design-tokens");
+  if (desingTokensPage) {
     const userExportOptions = sketchExportModal();
     saveFileModal(userExportOptions.fileformat);
   } else {
