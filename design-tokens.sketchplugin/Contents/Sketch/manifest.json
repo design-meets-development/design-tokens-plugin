@@ -2,8 +2,8 @@
   "name": "Design tokens",
   "description": "Sketch plugin exports design tokens to JSON format.",
   "author": "Andreas Koutsoukos",
-  "version": "1.0",
-  "compatibleVersion": "56",
+  "version": "1.1.2",
+  "compatibleVersion": "59.1",
   "bundleVersion": 1,
   "icon": "icon_128x128.png",
   "commands": [
