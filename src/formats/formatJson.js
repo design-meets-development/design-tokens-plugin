@@ -48,7 +48,7 @@ export const typography = () => {
           [item.name]: {
             "font-family": { value: item.fontFamily },
             "font-size": { value: item.fontSize },
-            weight: { value: item.weight },
+            weight: { value: item.fontWeight },
             "letter-spacing": { value: item.letterSpacing },
             "line-height": { value: item.lineHeight },
             type: item.tokenType
@@ -59,6 +59,7 @@ export const typography = () => {
     // Gives the name of the category
     jsonData.typography = arrayToObject(getTypography);
     const rawData = fromPairs(Object.entries(jsonData.typography));
+    console.log(getTypography);
     const typographyData = JSON.stringify({ typography: rawData }, null, 4);
     return typographyData;
   }
