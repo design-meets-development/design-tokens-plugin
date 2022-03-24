@@ -1,5 +1,9 @@
 ![alt text](assets/readme-cover.jpg)
 
+# SUPPORT END OF LIFE!
+Read more about [Sketch tokens](https://www.sketch.com/blog/2022/03/17/color-tokens/)
+
+
 # Design Tokens
 
 Delivering consistent Design System. A Sketch plugin that exports Design Tokens to JSON format. You can export colors, typography, icons and utilis.
