@@ -19,7 +19,10 @@ if (tokenPage) {
   const colorGroups = layers.filter(layer => layer.name.includes(colorGroupName));
   const groupLayers = map(colorGroups, "layers")
     .flat()
-    .filter(item => item.name.includes(colorLayerName));
+    .filter(item => item.name.includes(colorLayerName))
+    .filter(({ sharedStyleId }) => {
+      return !!sketchDomSelected.getSharedLayerStyleWithID(sharedStyleId);
+    });
   getColorFills = groupLayers.map(({ name, sharedStyleId }) => {
     const rgba = hexToRGB(sketchDomSelected.getSharedLayerStyleWithID(sharedStyleId).style.fills.map(fill => fill.color)[0]);
     return {
